@@ -156,7 +156,6 @@ def switch_global_version(version: str, always_install: bool) -> None:
     if version in installed_versions():
         with open(f"{SOLC_SELECT_DIR}/global-version", "w") as f:
             f.write(version)
-        print("Switched global version to", version)
     elif version in get_available_versions():
         if always_install:
             install_artifacts([version])
